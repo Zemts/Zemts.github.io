@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<link rel='stylesheet' href='example/css/common.css'>
+		<link rel='stylesheet' href='example/css/user-settings.css'>
+		<link rel='stylesheet' href='example/css/work-space.css'>
+		<link rel='stylesheet' href='example/css/media-rules.css'>
+		<script src='example/js/main.js' defer></script>
+		<script src='src/algorithms.js' async></script>
+		<script src='src/core.js' async></script>
+		<script>
+			window.addEventListener('load', function(){
+				// listener of 'generate button' collect all user settings and
+				// pass them to main.generate() like argument
+				// * modules 'algorithms' and 'core' should already be loaded at this moment
+				main.generateButton.click();
+			});
+		</script>
+		<title>Example of 'Labyrinths generator' based on DOM elements</title>
+	</head>
+	<body>
+		<div class='tab js__user-settings'>
+			<div class='tab__item js__visual'>
+				<button class='tab__item__prop tab__item__prop--button js__menu-name' title='visual settings'>
+					Visual settings
+				</button>
+				<div class='tab__item__prop js__item-prop'>
+					<div class='input-name' title='delay'>
+						Delay:
+					</div>
+					<input class='input-edit js__rendering-delay' type='edit' title='delay in [milliseconds]' value='10'>
+				</div>
+			</div>
+			<div class='tab__item js__sizing'>
+				<button class='tab__item__prop tab__item__prop--button js__menu-name' title='size settings'>
+					Size settings
+				</button>
+				<div class='tab__item__prop js__item-prop'>
+					<div class='input-name' title='width'>
+						Width:
+					</div>
+					<input class='input-edit js__maze-width' type='edit' title='width in [cells]' value='51'>
+				</div>
+				<div class='tab__item__prop js__item-prop'>
+					<div class='input-name' title='height'>
+						Height:
+					</div>
+					<input class='input-edit js__maze-height' type='edit' title='height in [cells]' value='51'>
+				</div>
+				<div class='tab__item__prop js__item-prop'>
+					<div class='input-name' title='cell size'>
+						Cell size:
+					</div>
+					<input class='input-edit js__maze-cell-size' type='edit' title='cell size in [px] or "auto"' value='auto'>
+				</div>
+			</div>
+			<div class='tab__item js__algorithms'>
+				<button class='tab__item__prop tab__item__prop--button js__menu-name' title='algorithms'>
+					Algorithms
+				</button>
+				<div class='tab__item__prop tab__item__prop--label js__item-prop js__algorithm-label'>
+					<div class='radio-imitation js__radio-imitation s__radio-on' data-algorithm-name='Eller'></div>
+					<div class='input-name input-name--radio' title="Eller's algorithm">
+						Eller's algorithm
+					</div>
+				</div>
+				<div class='tab__item__prop tab__item__prop--label js__item-prop js__algorithm-label'>
+					<div class='radio-imitation js__radio-imitation' data-algorithm-name='simple'></div>
+					<div class='input-name input-name--radio' title="simple algorithm">
+						Simple algorithm
+					</div>
+				</div>
+			</div>
+			<div class='tab__item'>
+				<button class='tab__item__prop tab__item__prop--button js__generate-button' type='button' title='Click for generate labyrinth'>
+					Generate
+				</button>
+			</div>
+		</div>
+		<div class='black-stripe js__black-stripe'></div>
+		<div class='work-space js__work-space'>
+			<div class='like-margin js__like-margin'></div>
+			<div class='maze js__maze-container'></div>
+			<div class='like-margin js__like-margin'></div>
+			<div class='row s__hidden js__row-prototype'></div>
+			<div class='cell s__custom-side s__hidden js__cell-prototype'></div>
+		</div>
+	</body>
+</html>

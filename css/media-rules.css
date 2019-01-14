@@ -1,0 +1,66 @@
+/*
+*	pieceSize = (100% - (piecesCount - 1) ) / piecesCount;
+*	sizes of screen in media rules ensure that minimal width of ".proj" element will be at least 320+ px
+*/
+@media screen and (min-width: 1561px) { /* 4pcs */
+	.proj {
+		width: 24.25%;
+	}
+	.proj:nth-child(4n) {
+		margin-right: 0;
+	}
+	.proj:nth-child(-n + 4) {
+		margin-top: 0;
+	}
+}
+@media screen and (max-width: 1560px) and (min-width: 1081px) { /* 3pcs */
+	.proj {
+		width: 32.6667%;
+	}
+	.proj:nth-child(3n) {
+		margin-right: 0;
+	}
+	.proj:nth-child(-n + 3) {
+		margin-top: 0;
+	}
+}
+@media screen and (max-width: 1080px) and (min-width: 721px) { /* 2pcs */
+	.proj {
+		width: 49.5%;
+	}
+	.proj:nth-child(2n) {
+		margin-right: 0;
+	}
+	.proj:nth-child(-n + 2) {
+		margin-top: 0;
+	}
+}
+@media screen and (max-width: 720px) { /* 1pc */
+	.proj {
+		width: 100%;
+		margin-right: 0;
+	}
+	.proj:first-child {
+		margin-top: 0;
+	}
+}
+
+/*
+*	pieceSize = (100% - 2 * (piecesCount - 1) ) / piecesCount;
+*	sizes of screen in media rules ensure that minimal height of ".proj" element will be at least 200+ px
+*/
+@media screen and (min-height: 841px) {	/* 3pcs */
+	.proj {
+		height: 32%;
+	}
+}
+@media screen and (max-height: 840px) and (min-height: 481px) {	/* 2pcs */
+	.proj {
+		height: 49%;
+	}
+}
+@media screen and (max-height: 480px) {	/* 1pcs */
+	.proj {
+		height: 100%;
+	}
+}

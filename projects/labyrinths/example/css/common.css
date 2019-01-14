@@ -1,0 +1,27 @@
+* {
+	font-family: Times New Roman;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	background: transparent;
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+}
+
+.black-stripe {
+	background-color: black;
+	display: inline-block;
+	position: relative;
+}
+
+.s__hidden {
+	display: none !important;
+}

@@ -1,0 +1,150 @@
+/*
+*	COMMON
+*/
+* {
+	margin: 0;
+	outline: none;
+	padding: 0;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+/*
+*	MAIN
+*/
+.frames {
+	display: block;
+	font-size: 0;
+	height: 100%;
+	min-height: 240px;
+	min-width: 360px;
+	overflow: auto;
+	padding: 1vmax;
+	position: relative;
+	width: 100%;
+}
+.background {
+	background-image: url('../img/4k_bg.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	content: "";
+	filter: blur(3px);
+	height: 110%;
+	left: -5%;
+	position: fixed;
+	top: -5%;
+	transition: filter 300ms linear;
+	width: 110%;
+	z-index: 1;
+}
+.background:hover {
+	filter: blur(0px);
+}
+.proj {
+	border: none;
+	display: inline-flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	margin-right: 1%;
+	margin-top: 2%;
+	position: relative;
+	z-index: 2;
+}
+.proj:hover * {
+	color: rgb(0, 191, 255);
+}
+.proj:hover .proj__iframe {
+	border-color: rgb(0, 191, 255);
+}
+.proj__iframe {
+	border: 2px solid transparent;
+	height: 90%;
+	position: relative;
+	width: 100%;
+}
+.proj__head {
+	border: none;
+	display: block;
+	height: 10%;
+	margin-bottom: 5px;
+	max-height: 40px;
+	min-height: 20px;
+	padding-left: 2px;
+	width: 100%;
+}
+.proj__head__text {
+	color: black;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 800;
+	max-width: calc(100% - 50px); /* 50px for buttons */
+	overflow: hidden;
+	padding: 0 5% 0 0;
+	position: relative;
+	text-align: left;
+	text-overflow: ellipsis;
+	top: 50%;
+	transform: translateY(-50%);
+	white-space: nowrap;
+	width: auto;
+}
+.proj__head__bttn {
+	background: transparent;
+	background-image: url('../img/buttons.png');
+	background-position: center;
+	background-size: 66px 66px;
+	border: none;
+	cursor: pointer;
+	float: right;
+	height: 22px;
+	outline: none;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 22px;
+}
+.proj__head__bttn[title='Open in new tab'] {
+	background-position: 0 100%;
+}
+.proj__head__bttn[title='Open in new tab']:hover {
+	background-position: 50% 100%;
+}
+.proj__head__bttn[title='Maximize element'] {
+	background-position: 0 0;
+}
+.proj__head__bttn[title='Maximize element']:hover {
+	background-position: 50% 0;
+}
+.proj__head__bttn[title='Minimize element'] {
+	background-position: 0 50%;
+}
+.proj__head__bttn[title='Minimize element']:hover {
+	background-position: 50% 50%;
+}
+
+/*
+*	SPECIAL
+*/
+.s__hidden {
+	display: none;
+}
+.s__hidden-overflow {
+	overflow: hidden;
+}
+.s__max-size {
+	position: fixed !important;
+	height: 90% !important;
+	left: 5% !important;
+	top: 5% !important;
+	width: 90% !important;
+}
+.s__front-layer {
+	z-index: 10;
+}
+.s__pre-front-layer {
+	z-index: 9;
+}

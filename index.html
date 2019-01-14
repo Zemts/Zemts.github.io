@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>List of experiments</title>
+		<link rel='stylesheet' href='css/css.css'>
+		<link rel='stylesheet' href='css/media-rules.css'>
+		<script src='js/js.js' async></script>
+		<script>
+			window.addEventListener('load', function(){
+				window.core.createFrames();
+			});
+		</script>
+	</head>
+	<body>
+		<div class='frames js__frames-container'></div>
+		<div class='proj s__hidden js__proj-proto'>
+			<div class='proj__head'>
+				<span class='proj__head__text js__definition'></span>
+				<button class='proj__head__bttn js__new-tab-button' title='Open in new tab'></button>
+				<button class='proj__head__bttn js__max-min-button' title='Maximize element'></button>
+			</div>
+			<iframe class='proj__iframe js__iframe'></iframe>
+		</div>
+		<div class='background js__bg'></div>
+	</body>
+</html>
