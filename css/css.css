@@ -137,14 +137,16 @@
 }
 .s__max-size {
 	position: fixed !important;
-	height: 90% !important;
-	left: 5% !important;
-	top: 5% !important;
-	width: 90% !important;
+	height: calc(100% - 2vmax) !important;
+	width: calc(100% - 2vmax) !important;
 }
+
 .s__front-layer {
 	z-index: 10;
 }
 .s__pre-front-layer {
 	z-index: 9;
+}
+.s__transparent {
+	opacity: 0 !important;
 }

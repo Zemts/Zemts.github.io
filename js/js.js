@@ -1,10 +1,11 @@
 (function(target){
 	
-	var FRONT = 's__front-layer';
 	var HIDDEN = 's__hidden';
+	var HIDDEN_OVERFLOW = 's__hidden-overflow';
+	var FRONT = 's__front-layer';
 	var MAX_SIZE = 's__max-size';
 	var PRE_FRONT = 's__pre-front-layer';
-	var HIDDEN_OVERFLOW = 's__hidden-overflow';
+	var TRANSPARENT = 's__transparent';
 	
 	var BACKGROUND = 'js__bg';
 	var CONTAINER = 'js__frames-container';
@@ -17,15 +18,20 @@
 	
 	var frameProto;
     var projsList = [
-		{ 'name' : 'Labyrinths generator', 'src' : 'labyrinths' },
-		{ 'name' : 'Randomly moving load screen', 'src' : 'randomly moving' }
+		{ 'name' : 'Labyrinths generator', 'src' : 'labyrinths' }
 	];
 	
 	function resizeFrame(){
+		myLoadScreen.start();
+		this.classList.add(TRANSPARENT);
 		this.classList.toggle(MAX_SIZE);
 		this.classList.toggle(FRONT);
 		document.getElementsByClassName(CONTAINER)[0].classList.toggle(HIDDEN_OVERFLOW);
 		document.getElementsByClassName(BACKGROUND)[0].classList.toggle(PRE_FRONT);
+		setTimeout(function(){
+			myLoadScreen.stop();
+			this.classList.remove(TRANSPARENT);
+		}.bind(this), 2000);
 	}
 	function switchMinMax(){
 		this.title = (this.title === 'Minimize element') ? 'Maximize element' : 'Minimize element';

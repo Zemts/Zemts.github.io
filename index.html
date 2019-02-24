@@ -5,8 +5,10 @@
 		<link rel='stylesheet' href='css/css.css'>
 		<link rel='stylesheet' href='css/media-rules.css'>
 		<script src='js/js.js' async></script>
+		<script src='projects/randomly moving/loadScreen.js' async></script>
 		<script>
 			window.addEventListener('load', function(){
+				window.myLoadScreen = new loadScreen();
 				window.core.createFrames();
 			});
 		</script>
